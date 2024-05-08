@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Recognition And Recipe Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main_css.css') }}">
+</head>
+<body>
+    <center>
+        <video id="background-video" autoplay loop muted>
+            <source src="{{ url_for('static', filename='HTMLmaterial/first.mp4') }}" type="video/mp4">
+        </video>
+        
+        <h1 style="text-align: center">Recognize Your Vegetable and Get Recipes Instantly</h1>
+
+        <div class="instruction">
+            <h3>Please Read Before You START</h3>
+            <p>1. Please select the &lt; Cuisine &gt; you want to cook from the following 3 options (Japanese/Chinese/Western).</p>
+            <p>2. Please upload 1 to 5 images of the vegetables that are listed below.</p>
+            
+            <nav>
+                <ul>
+                    {% for vegType in vegTypes %}
+                    <li>{{ vegType }}</li>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+            <p>3. After that, the system will recognize the vegetables & consider the chosen genre, then display recommended <strong>5 recipes</strong>.</p>
+            <p>4. Choose 1 title of the recipe that interests you from the 5 options.</p>
+            <p>5. After selecting 1 from the 5 options, the detailed recipe will be displayed.</p>
+        </div>
+
+        <br>
+
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <fieldset class="category">
+                <legend><strong>Choose Genre of cuisine</strong></legend>
+                <label><input type="checkbox" name="fav" value="japanese">Japanese Cuisine</label><br>
+                <label><input type="checkbox" name="fav" value="chinese">Chinese Cuisine</label><br>
+                <label><input type="checkbox" name="fav" value="western">Western Cuisine</label>
+            </fieldset>
+
+            <ul>
+                <div class="class1">
+                    <img src="{{ url_for('static', filename='HTMLmaterial/vegimg.png') }}" width="300" height="200" alt="vegimageFirst">
+                </div>
+            </ul>
+
+            <div style="text-align: center">
+                <h2 class="floating-text">Please Upload Image</h2><br>
+                <input type="file" name="upload" accept="image/*" multiple required><br><br>
+                <input type="submit" value="Upload">
+            </div>
+        </form>
+    </center>
+</body>
+</html>

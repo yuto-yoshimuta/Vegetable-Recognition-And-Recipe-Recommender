@@ -1,0 +1,192 @@
+/* General Styles */
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Heading Styles */
+h1, h2 {
+    color: #333;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Main Content Container */
+.main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox Styles */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Image Styles */
+.image {
+    flex: 1 1 300px;
+    margin-right: 20px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Right Column Styles */
+.right {
+    flex: 1 1 calc(70% - 20px);
+}
+
+/* Title Styles */
+.title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Text Styles */
+.text {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Column Styles */
+.column {
+    flex: 1 1 calc(33% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.text p {
+    padding: 10px;
+    color: #555;
+}
+
+p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #555;
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    transition: ease .2s;
+}
+
+.btn span {
+    position: relative;
+    z-index: 3;
+    color: #333;
+}
+
+.btn:hover span {
+    color: #fff;
+}
+
+/* Background Animation */
+.bgskew::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -130%;
+    background: #333;
+    width: 120%;
+    height: 100%;
+    transform: skewX(-25deg);
+}
+
+.bgskew:hover::before {
+    animation: skewanime .5s forwards;
+}
+
+@keyframes skewanime {
+    100% {
+        left: -10%;
+    }
+}
+
+/* Background Video */
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    -webkit-filter: blur(2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 750px) {
+    #background-video {
+        display: none;
+    }
+    body {
+        background-size: cover;
+    }
+}
+
+/* Top Class Styles */
+.top {
+    font-weight: bold;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: double 6px;
+    border-radius: 15px;
+    font-size: 150%;
+    padding: 15px;
+}

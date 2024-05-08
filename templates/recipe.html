@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vegetable Recognition And Recipe Recommender</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe_css.css') }}">
+    <link rel="stylesheet" type="text/css" href="css/7-1-8.css">
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted>
+        <source src="{{ url_for('static', filename='HTMLmaterial/recipe.mp4') }}" type="video/mp4">
+    </video>
+
+    <!-- Top Section -->
+    <div class="top">
+        {% for recipe in recipe_dict %}
+        <h1>{{ recipe.title }}</h1>
+        {% endfor %}
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="flex">
+            <!-- Recipe Image -->
+            <figure class="image">
+                {% for recipe in recipe_dict %}
+                <img src="{{ recipe.dish_img_path }}" class="special-image">
+                {% endfor %}
+            </figure>
+
+            <!-- Right Column -->
+            <div class="right">
+                <p class="title">Description</p>
+                {% for recipe in recipe_dict %}
+                <p class="text">{{ recipe.text }}</p>
+                <p class="title">{{ recipe.result_text }}</p>
+                {% endfor %}
+
+                <!-- Ingredients Table -->
+                <table style="border:none;">
+                    <tbody style="border:none;">
+                        {% for item in items %}
+                        <tr style="border:none;">
+                            <td style="border:none;">{{ item.material }}</td>
+                            <td style="border:none;">{{ item.quantity }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Recipe Section -->
+        <h2>Recipe</h2>
+        <div class="container">
+            {% for order in orders %}
+            <div class="column">
+                <p>{{ loop.index }}</p>
+                <img class="image" src="{{ order.img }}">
+                <div class="text">
+                    <p>{{ order.exp }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Tips/Points Section -->
+        <h2>Tips/Points</h2>
+        {% for recipe in recipe_dict %}
+        <p>{{ recipe.kotu_text }}</p>
+        {% endfor %}
+
+        <!-- Navigation Buttons -->
+        <div class="text-center mt-4">
+            <a href="{{ url_for('upload_file') }}" class="btn bgskew"><span>Back to Home</span></a>
+            <a href="{{ url_for('predict') }}" class="btn bgskew"><span>Back to choose recipes</span></a>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+Vegetable Recognition And Recipe Recommender
+├─AI
+│  └─train_imgs
+│      ├─test
+│      └─train
+├─static
+│  ├─css
+│  │      choose_css.css: 
+│  │      main_css.css: 
+│  │      recipe_css.css: 
+│  │
+│  ├─HTMLmaterial
+│  │      cook.mp4: 
+│  │      first.mp4: 
+│  │      NoImage.jpg: 
+│  │      recipe.mp4: 
+│  │      vegimg.png: 
+│  │
+│  └─uploads: 
+├─templates
+│      choose.html: 
+│      main.html: 
+│      recipe.html: 
+│
+├─ToolProgram
+│        bing_image_crawler.py: 
+│         cookpad_scraper.py: 
+│        images_cleanup.py: 
+│        image_transformer.py: 
+│        union_join_random.py: 
+│
+├app.py: 
+├File_Description.txt: 
+├gKey.json: 
+├model_20.h5: 
+├recipe_dataset.csv: 
+└veg20.csv: 

@@ -1,0 +1,75 @@
+/* Styling for the background video */
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  -webkit-filter: blur(4px); /* Apply a 4px blur effect to the background video */
+}
+
+/* General styling for the body */
+body {
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  margin-top: 10vh; /* Add margin to the top of the body equal to 10% of the viewport height */
+  text-align: center;
+}
+
+/* Styling for the h2 elements */
+h2 {
+  font-weight: bold; /* Set font weight to bold for h2 elements */
+}
+
+/* Styling for elements with class 'top' */
+.top {
+  font-weight: bold; /* Set font weight to bold for elements with class 'top' */
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5); /* Apply a semi-transparent white background */
+}
+
+/* Styling for elements with class 'recognized' */
+.recognized {
+  font-weight: bold; /* Set font weight to bold for elements with class 'recognized' */
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5); /* Apply a semi-transparent white background */
+}
+
+/* Styling for submit button on hover */
+input[type=submit]:hover {
+  background-color: #ff6666; /* Change background color to a lighter red on hover */
+}
+
+/* Styling for submit button */
+input[type=submit] {
+  background-color: #ff9999; /* Set background color for the submit button */
+  color: white; /* Set text color to white */
+  padding: 10px 20px; /* Set padding for the submit button */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Apply a border-radius of 10px */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition for background color changes */
+}
+
+/* Media query for screens with a maximum width of 750px */
+@media (max-width: 750px) {
+  #background-video {
+    display: none; /* Hide the background video on screens with a maximum width of 750px */
+  }
+  body {
+    background-size: cover; /* Ensure the background image covers the entire body */
+  }
+}
+.carousel-caption h3 {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: double 6px;
+  border-radius: 15px;
+  font-size: 150%;
+  padding: 15px;
+}
